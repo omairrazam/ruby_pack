@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.11.2"
+lock "3.5.0"
 
 set :application, "sitma"
 set :repo_url, "git@github.com:omairrazam/ruby_pack"
@@ -18,7 +18,7 @@ set :repo_url, "git@github.com:omairrazam/ruby_pack"
 
 # Default value for :pty is false
 set :pty, true
-
+set :bundle_jobs, 1
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
 
@@ -30,7 +30,7 @@ set :pty, true
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public','lib/scraper/general/html')
+set :linked_dirs, fetch(:linked_dirs, []).push('.bundle', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public','lib/scraper/general/html')
 # Don't change these unless you know what you're doing
 
 set :puma_preload_app, true
